@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff; /* White background */
+        }
+
+        .image-container img {
+            width: 300px;
+            height: 150px;
+            object-fit: cover; /* Maintain aspect ratio */
+            margin-bottom: 10px; /* Adjust the margin as needed */
+        }
+
+        .password-container {
+            text-align: center;
+            margin-top: 20px; /* Increased margin for more space */
+            font-family: "American Typewriter Light", "American Typewriter Semibold", "American Typewriter Bold";
+        }
+
+        .password-input {
+            padding: 15px; /* Increased padding for a larger input field */
+            font-size: 20px; /* Increased font size for a larger input field */
+            border: none;
+            border-bottom: 2px solid #000;
+            margin-right: 10px;
+            width: 250px; /* Increased width for a larger input field */
+            text-align: center;
+            letter-spacing: 1em; /* Add space between characters */
+            background-color: transparent;
+            outline: none;
+            display: inline-block; /* Center the input */
+            vertical-align: middle; /* Align the text vertically to the middle */
+        }
+
+        .password-container::before {
+            content: '';
+            display: block;
+            height: 2em; /* Increased height for a larger line below */
+        }
+
+        .initialize-button {
+            padding: 15px; /* Slightly reduced padding for a smaller button */
+            font-size: 16px; /* Reduced font size for a smaller button */
+            font-family: "American Typewriter Light", "American Typewriter Semibold", "American Typewriter Bold";
+            background-color: #333; /* Dark background color */
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="image-container">
+        <!-- Replace the src attribute with the actual image URL -->
+        <img src="IMG_6163.JPG" alt="Your Logo"/>
+    </div>
+
+    <div class="password-container">
+        <input type="password" class="password-input" id="password" placeholder="______" maxlength="6" oninput="updatePassword()">
+        <br>
+        <button class="initialize-button" onclick="initiate()">INITIATE</button>
+    </div>
+
+    <script>
+        function updatePassword() {
+            var passwordInput = document.getElementById("password");
+            var passwordValue = passwordInput.value;
+            passwordInput.value = passwordValue.replace(/./g, '•'); // Replace each character with a black dot
+        }
+
+        function initiate() {
+            alert("Initializing process..."); // Replace with your desired action
+        }
+    </script>
+
+</body>
+</html>
